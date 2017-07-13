@@ -5,3 +5,58 @@ body {
 .footer {
   background-color: #3B404C;
 }
+
+.navbar {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  height : 90px;
+}
+
+.navbarItems {
+  display: inline-block;
+}
+
+.nav-pills {
+  padding-top: 20px;
+  padding-right: 50px;
+}
+
+.underCounter {
+  margin-top: 25px;
+}
+
+#counterContainer {
+  border-radius: 0px 0px 50px 50px;
+  display: absolute;
+  width: inherit;
+  height:100%;
+  background-color: #FB00FF;
+}
+
+#counter {
+  margin-top: 10px;
+  top: 40px;
+  left: 40px;
+  font-size: 1em;
+  color: black;
+}
+
+#aboutContainer{
+  background-color: #FF0084;
+}
+
+.socialLinks:hover{
+  filter: brightness(100);
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+#canvasDiv {
+  border: 5px double #000000;
+  display: none;
+  /*This ^ will be modified to be "display:inline" when the canvas is ready to be used!*/
+}
