@@ -25,12 +25,22 @@
       </div>
       <div class="col-md-12 well underCounter">
         <h2> Let's Get Started! </h2>
-          <p> Click the button below to log in with GitHub and start the FroYo process.</p>
-          <button class='btn btn-lg btn-success' type="button">Log In With GitHub</button>
+          <p> Select your data entry method, enter the required data, and then press the "FroYoMyRepo" button!</p>
+          <label><input type="radio" name="inputMethod" checked onclick="useInputMethod1();" id="inputMethod1"> Use GitHub URL</label>
+          <br>
+          <label><input type="radio" name="inputMethod" onclick="useInputMethod2();" id="inputMethod2"> Use Repo Owner &amp; Repo Name</label>
+          <input type="text" class="form-control inputMethod2" id="repoOwner" placeholder="Please Enter The Owner Of The Repo Here...">
+          <input type="text" class="form-control inputMethod2" id="repoName" placeholder="Please Enter Repo Name Here...">
+          <input type="url" class="form-control inputMethod1" id="repoUrl" placeholder="Please Enter The GitHub Repo URL Here...">
+          <br>
+          <button class='btn btn-lg btn-success' type="button" onclick="displayFroYo();">FroYoMyRepo!</button>
+          <div class="alert alert-danger">
+            <p><strong>Whoops!</strong> Your input is invalid. Please try again!</p>
+          </div>
       </div>
       <div class="row">
         <div class="col-md-4 col-md-offset-4 row" id="canvasDiv">
-          <canvas id="canvas" width="5px" height="600px"></canvas>
+          <canvas id="canvas" width="350px" height="600px"></canvas>
         </div>
       </div>
       <div class="row">
@@ -50,11 +60,11 @@
     </div>
       <div class="col-md-12 row">
         <hr>
-        <p class="text-center"> &copy; Zachary Saunders 2017</p>
+        <p class="text-center"> &copy; Zachary Saunders 2017, All Rights Reserved</p>
       </div>
     </div>
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../js/bootstrap.js"></script>
+    <script src="../js/script.js"></script>
   </body>
 </html>
