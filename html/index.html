@@ -29,13 +29,13 @@
           <label><input type="radio" name="inputMethod" checked onclick="useInputMethod1();" id="inputMethod1"> Use GitHub URL</label>
           <br>
           <label><input type="radio" name="inputMethod" onclick="useInputMethod2();" id="inputMethod2"> Use Repo Owner &amp; Repo Name</label>
-          <input type="text" class="form-control inputMethod2" id="repoOwner" placeholder="Please Enter The Owner Of The Repo Here...">
-          <input type="text" class="form-control inputMethod2" id="repoName" placeholder="Please Enter Repo Name Here...">
+          <input type="text" class="form-control inputMethod2" id="repoOwner" placeholder="Please Enter The Owner Of The Repo Here (Case Insensitive)...">
+          <input type="text" class="form-control inputMethod2" id="repoName" placeholder="Please Enter Repo Name Here (Case Insensitive)...">
           <input type="url" class="form-control inputMethod1" id="repoUrl" placeholder="Please Enter The GitHub Repo URL Here...">
           <br>
-          <button class='btn btn-lg btn-success' type="button" onclick="displayFroYo();">FroYoMyRepo!</button>
-          <div class="alert alert-danger">
-            <p><strong>Whoops!</strong> Your input is invalid. Please try again!</p>
+          <button class='btn btn-lg btn-success' type="button" onclick="froYoMyRepo();">FroYoMyRepo!</button>
+          <div class="col-md-12 alert alert-danger" id="alert">
+            <p><strong> Whoops! </strong> We were unable to locate that repo. Please verify that you entered the info correctly, and verify that the repo is public.</p>
           </div>
       </div>
       <div class="row">
@@ -46,7 +46,7 @@
       <div class="row">
         <div class="col-md-4">
           <h2 class="text-center"> How Does It Work? </h2>
-            <p> After you log into GitHub, we will ask you to choose the repo you want FroYo'd. Once you select a repo, we will generate a frozen yogurt sculpture based on the technologies used in that repo. Yum!</p>
+            <p> Once you enter the required information about your repo, we will generate a frozen yogurt sculpture based on the technologies used in that repo. Yum!</p>
         </div>
         <div class="col-md-4">
           <h2 class="text-center"> Samples </h2>
