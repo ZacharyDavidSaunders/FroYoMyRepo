@@ -3,8 +3,8 @@ function displayFroYo(langs, repoName, repoOwner){
   var canvas = document.getElementById("canvas");
   var context = canvas.getContext("2d");
   canvasDiv.style.display = "inline";
-  clearCanvas(context, canvas);
-  loadCanvas(canvas, context, langs, repoName);
+  clearCanvas(canvas);
+  loadCanvas(canvas, context, langs, repoName, repoOwner);
 }
 
 function froYoMyRepo(){
@@ -89,7 +89,7 @@ function useInputMethod1(){
   }
 }
 
-function loadCanvas(canvas, context, langs, repoName){
+function loadCanvas(canvas, context, langs, repoName, repoOwner){
   var middleWidth = canvas.width / 2;
   var cone = new Image();
   var logo = new Image();
@@ -109,24 +109,36 @@ function loadCanvas(canvas, context, langs, repoName){
       scoops.push(new Image());
       scoops[i].src = possibleScoopSrcs[randomNumber];
   }
-
   console.log("Scoops length = "+scoops.length);
-  var scoopOffset = cone.height/8;
-  var langLabelOffset = scoopOffset*1.5;
-  context.drawImage(cone, middleWidth-60, 350, cone.width/8, cone.height/8);
-  context.fillText(repoName, cone.width/6 + 5, cone.height/4);
-  context.strokeText(repoName, cone.width/6 + 5, cone.height/4);
-  context.font = "bold 20pt Verdana";
-  for(var i =0; i < scoops.length; i++) {
-      context.drawImage(scoops[i], 100, scoopOffset, scoops[i].width/8, scoops[i].height/8);
-      context.fillText(langs[i], 180, langLabelOffset);
-      context.strokeText(langs[i], 180, langLabelOffset);
-      scoopOffset-= 80;
-      langLabelOffset-=80;
+
+  cone.onload = function(){ //When the cone image is loaded, do this...
+      context.drawImage(cone, middleWidth-60, 350, cone.width/8, cone.height/8);
+      context.fillText(repoName, cone.width/6 + 5, cone.height/4);
+      context.strokeText(repoName, cone.width/6 + 5, cone.height/4);
+      context.font = "bold 15pt Verdana";
+      context.fillText("by "+repoOwner, cone.width/6 + 5, cone.height/4 + 25);
+      //context.strokeText(repoOwner, cone.width/6 + 5, cone.height/4 + 25);
   }
-  context.drawImage(logo, middleWidth+115, 520, logo.width/4, logo.height/4);
+
+  scoops[scoops.length-1].onload = function(){ //When the last scoop image is loaded, do this...
+      var scoopOffset = cone.height/8;
+      var langLabelOffset = scoopOffset*1.5;
+
+      context.font = "bold 20pt Verdana";
+      for(var i =0; i < scoops.length; i++) {
+          context.drawImage(scoops[i], 100, scoopOffset, scoops[i].width/8, scoops[i].height/8);
+          context.fillText(langs[i], 180, langLabelOffset);
+          context.strokeText(langs[i], 180, langLabelOffset);
+          scoopOffset-= 80;
+          langLabelOffset-=80;
+      }
+  }
+
+  logo.onload = function(){ //When the logo image is loaded, do this...
+      context.drawImage(logo, middleWidth+115, 520, logo.width/4, logo.height/4);
+  }
 }
 
-function clearCanvas(context, canvas){
-  canvas.width = canvas.width; //By redefining a property, the canvas is reset.
+function clearCanvas(canvas){
+  canvas.width = canvas.width; //By redefining a property, all the properties of the canvas is reset.
 }
