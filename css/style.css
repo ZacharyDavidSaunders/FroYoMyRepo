@@ -40,6 +40,10 @@ hr {
   text-indent: 30px;
 }
 
+.brand {
+  float: left;
+}
+
 .core {
   margin-top: 25px;
 }
