@@ -44,7 +44,7 @@ function processInput(){
 }
 
 function getLangsFromGitHub(ownerName, repo, callback){
-  var gitHubApiEndpointUrl = "https://api.github.com";
+  var gitHubApiEndpointUrl = "https://api.github.com"; //The baseline git API endpoint, excluding all subdirectories.
   var xhttp = new XMLHttpRequest();
 
   xhttp.open("GET", (gitHubApiEndpointUrl+"/repos/"+ownerName+"/"+repo+"/languages"), true); // https://api.github.com/repos/ZacharyDavidSaunders/bubo/languages
@@ -90,11 +90,13 @@ function useInputMethod1(){
 }
 
 function loadCanvas(canvas, context, langs, repoName, repoOwner){
-  var middleWidth = canvas.width / 2;
-  var cone = new Image();
-  var logo = new Image();
-  var randomNumber;
-  var scoops = [];
+  var middleWidth = canvas.width / 2;   //This is a baseline for the middle of the canvas.
+  var cone = new Image();               //The cone image
+  var logo = new Image();               //The logo image (little pink icon)
+  var randomNumber;                     //A random seed used to pick the scoop images.
+  var scoops = [];                      //The generated scoop images
+
+  //A list of all the scoop image sources
   var possibleScoopSrcs = ["../imgs/froYoImages/blueScoop.png","../imgs/froYoImages/greenScoop.png","../imgs/froYoImages/brownScoop.png","../imgs/froYoImages/purpleScoop.png","../imgs/froYoImages/yellowScoop.png","../imgs/froYoImages/redScoop.png"];
 
   context.font = "bold 25pt Verdana";
@@ -117,7 +119,6 @@ function loadCanvas(canvas, context, langs, repoName, repoOwner){
       context.strokeText(repoName, cone.width/6 + 5, cone.height/4);
       context.font = "bold 15pt Verdana";
       context.fillText("by "+repoOwner, cone.width/6 + 5, cone.height/4 + 25);
-      //context.strokeText(repoOwner, cone.width/6 + 5, cone.height/4 + 25);
   }
 
   scoops[scoops.length-1].onload = function(){ //When the last scoop image is loaded, do this...
