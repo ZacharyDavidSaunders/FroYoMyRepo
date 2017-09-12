@@ -30,8 +30,10 @@
           <input type="text" class="form-control inputMethod2" id="repoOwner" placeholder="Please Enter The Owner Of The Repo Here (Case Insensitive)...">
           <input type="text" class="form-control inputMethod2" id="repoName" placeholder="Please Enter Repo Name Here (Case Insensitive)...">
           <input type="url" class="form-control inputMethod1" id="repoUrl" placeholder="Please Enter The GitHub Repo URL Here...">
-          <br>
           <button class='btn btn-lg btn-success' type="button" onclick="froYoMyRepo();">FroYoMyRepo!</button>
+          <div class="alert alert-danger" id="error">
+            <p><strong>Whoops!</strong><br> We were unable to retrieve data about the repo you entered. Please check your spelling and ensure that the repo is public. After checking that, if you are still running into problems, please see the FAQ on the <a href="about.html">About</a> page.</p>
+          </div>
       </div>
       <div class="row">
         <div class="col-md-4 col-md-offset-4 row" id="canvasDiv">

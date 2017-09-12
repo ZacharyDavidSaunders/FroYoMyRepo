@@ -8,18 +8,20 @@ function displayFroYo(langs, repoName, repoOwner){
 }
 
 function froYoMyRepo(){
+  hideError();
   var input = processInput();
 
   if(input){
       console.log("input = " +input);
       getLangsFromGitHub(input[0],input[1], function(langArray){
-          if(typeof (langArray) ==="object") {
+          if(typeof (langArray) === "object") {
               var langs = langArray;
               console.log("langs = " + langs);
               displayFroYo(langs, input[1], input[0]);
           }
       });
   }else{
+      displayError();
   }
 }
 
@@ -57,8 +59,9 @@ function getLangsFromGitHub(ownerName, repo, callback){
             var langs = Object.keys(response);
             callback(langs);
         }else if(this.readyState == 4){
-            console.log("readyState: " +this.readyState);
-            console.log("status: " +this.status);
+          console.log("readyState: " + this.readyState);
+          console.log("status: " + this.status);
+          displayError();
         }
   };
 }
@@ -142,4 +145,14 @@ function loadCanvas(canvas, context, langs, repoName, repoOwner){
 
 function clearCanvas(canvas){
   canvas.width = canvas.width; //By redefining a property, all the properties of the canvas is reset.
+}
+
+function displayError(){
+    var errorMessage = document.getElementById("error");
+    errorMessage.style.display = "block";
+}
+
+function hideError(){
+    var errorMessage = document.getElementById("error");
+    errorMessage.style.display = "none";
 }
