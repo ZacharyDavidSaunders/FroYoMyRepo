@@ -27,13 +27,47 @@ function froYoMyRepo(){
 
 function processInput(){
   var inputMethod1RadioButton = document.getElementById("inputMethod1");
-  //var inputMethod2RadioButton = document.getElementById("inputMethod2");
-  //var urlInput = document.getElementById("repoUrl");
+  var urlInput = document.getElementById("repoUrl");
   var repoOwnerInput = document.getElementById("repoOwner");
   var repoNameInput = document.getElementById("repoName");
-
+  
   if(inputMethod1RadioButton.checked){
     //Parse URL and locate owner and repo name
+    if(urlInput)
+    {
+        var input = [];
+        var url = urlInput.value;;
+
+        //If the url ends with a "/", remove it
+        if(url.slice(-1) === "/"){
+            url = url.slice(0, -1);
+        }
+
+        //Reverse string.
+        url = url.split("").reverse().join("");
+
+        //Find the first /. Everything before that is the repo.
+        var repo = "";
+        for(var i = 0; url.length > i && url[i] != "/"; i++){
+            repo = repo.concat(url[i]);
+        }
+
+        //Reverse the repo name.
+        repo = repo.split("").reverse().join("");
+
+        //Find the second "/". Everything between the first and the second "/" is the repoOwner.
+        var repoOwner = "";
+        for(var i = repo.length+1; url.length > i && url[i] != "/"; i++){
+            repoOwner = repoOwner.concat(url[i]);
+        }
+
+        //Reverse the repoOwner.
+        repoOwner = repoOwner.split("").reverse().join("");
+
+        //Assign the data to the input array.
+        input.push(repoOwner);
+        input.push(repo);
+      }
   }else{
     if(repoOwnerInput.value && repoNameInput.value){
       var input = [];
