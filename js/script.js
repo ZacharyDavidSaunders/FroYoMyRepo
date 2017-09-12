@@ -18,6 +18,7 @@ function froYoMyRepo(){
               var langs = langArray;
               console.log("langs = " + langs);
               displayFroYo(langs, input[1], input[0]);
+              displayCanvasButton();
           }
       });
   }else{
@@ -30,7 +31,7 @@ function processInput(){
   var urlInput = document.getElementById("repoUrl");
   var repoOwnerInput = document.getElementById("repoOwner");
   var repoNameInput = document.getElementById("repoName");
-  
+
   if(inputMethod1RadioButton.checked){
     //Parse URL and locate owner and repo name
     if(urlInput)
@@ -143,6 +144,7 @@ function loadCanvas(canvas, context, langs, repoName, repoOwner){
   context.fillStyle = "black";
   cone.src = "../imgs/froYoImages/cone.png";
   logo.src = "../imgs/favicon.ico";
+
   for(var i = 0; i < langs.length; i++){
       randomNumber = Math.floor(Math.random() * possibleScoopSrcs.length);
       scoops.push(new Image());
@@ -190,3 +192,18 @@ function hideError(){
     var errorMessage = document.getElementById("error");
     errorMessage.style.display = "none";
 }
+
+function displayCanvasButton(){
+    var canvasButtons = document.getElementById("canvasButton");
+    canvasButtons.style.display = "block";
+}
+
+function saveCanvasImage(){
+    var saveLink = document.getElementById("saveLink");
+    var canvas = document.getElementById("canvas");
+
+    saveLink.href = canvas.toDataURL();
+    saveLink.download = "froYoMyRepo.png";
+}
+
+

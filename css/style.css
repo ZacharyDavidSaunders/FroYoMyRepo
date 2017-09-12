@@ -98,3 +98,12 @@ hr {
   display: none;
   /*This ^ will be modified to be "display:inline" when the canvas is ready to be used!*/
 }
+
+#canvasButton {
+  margin-top: 20px;
+  display: none;
+}
+
+#saveButton{
+  margin-left: 60px;
+}
