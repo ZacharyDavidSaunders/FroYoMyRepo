@@ -135,15 +135,15 @@ function loadCanvas(canvas, context, langs, repoName, repoOwner){
   var scoops = [];                      //The generated scoop images
 
   //A list of all the scoop image sources
-  var possibleScoopSrcs = ["../imgs/froYoImages/blueScoop.png","../imgs/froYoImages/greenScoop.png","../imgs/froYoImages/brownScoop.png","../imgs/froYoImages/purpleScoop.png","../imgs/froYoImages/yellowScoop.png","../imgs/froYoImages/redScoop.png"];
+  var possibleScoopSrcs = ["./imgs/froYoImages/blueScoop.png","./imgs/froYoImages/greenScoop.png","./imgs/froYoImages/brownScoop.png","./imgs/froYoImages/purpleScoop.png","./imgs/froYoImages/yellowScoop.png","./imgs/froYoImages/redScoop.png"];
 
   context.font = "bold 25pt Verdana";
   context.textAlign= "center";
   context.lineWidth = 1.8;
   context.strokeStyle = 'white';
   context.fillStyle = "black";
-  cone.src = "../imgs/froYoImages/cone.png";
-  logo.src = "../imgs/favicon.ico";
+  cone.src = "./imgs/froYoImages/cone.png";
+  logo.src = "./imgs/favicon.ico";
 
   for(var i = 0; i < langs.length; i++){
       randomNumber = Math.floor(Math.random() * possibleScoopSrcs.length);
