@@ -17,8 +17,12 @@ function froYoMyRepo(){
           if(typeof (langArray) === "object") {
               var langs = langArray;
               console.log("langs = " + langs);
-              displayFroYo(langs, input[1], input[0]);
-              displayCanvasButton();
+              if(langs.length > 4){
+                displayError(1);
+              }else{
+                displayFroYo(langs, input[1], input[0]);
+                displayCanvasButton();
+              }
           }
       });
   }else{
@@ -135,7 +139,11 @@ function loadCanvas(canvas, context, langs, repoName, repoOwner){
   var scoops = [];                      //The generated scoop images
 
   //A list of all the scoop image sources
-  var possibleScoopSrcs = ["./imgs/froYoImages/blueScoop.png","./imgs/froYoImages/greenScoop.png","./imgs/froYoImages/brownScoop.png","./imgs/froYoImages/purpleScoop.png","./imgs/froYoImages/yellowScoop.png","./imgs/froYoImages/redScoop.png"];
+  var possibleScoopSrcs = ["./imgs/froYoImages/blueScoop.png","./imgs/froYoImages/greenScoop.png",
+                          "./imgs/froYoImages/brownScoop.png","./imgs/froYoImages/purpleScoop.png",
+                          "./imgs/froYoImages/yellowScoop.png","./imgs/froYoImages/redScoop.png",
+                          "./imgs/froYoImages/whiteScoop.png", "./imgs/froYoImages/pinkScoop.png",
+                          "./imgs/froYoImages/creamScoop.png"];
 
   context.font = "bold 25pt Verdana";
   context.textAlign= "center";
@@ -160,7 +168,8 @@ function loadCanvas(canvas, context, langs, repoName, repoOwner){
       context.fillText("by "+repoOwner, cone.width/6 + 5, cone.height/4 + 25);
   }
 
-  scoops[scoops.length-1].onload = function(){ //When the last scoop image is loaded, do this...
+for(var i =0; i < scoops.length; i++){
+  scoops[i].onload = function(){
       var scoopOffset = cone.height/8;
       var langLabelOffset = scoopOffset*1.5;
 
@@ -173,6 +182,8 @@ function loadCanvas(canvas, context, langs, repoName, repoOwner){
           langLabelOffset-=80;
       }
   }
+}
+
 
   logo.onload = function(){ //When the logo image is loaded, do this...
       context.drawImage(logo, middleWidth+115, 520, logo.width/4, logo.height/4);
@@ -183,13 +194,23 @@ function clearCanvas(canvas){
   canvas.width = canvas.width; //By redefining a property, all the properties of the canvas is reset.
 }
 
-function displayError(){
-    var errorMessage = document.getElementById("error");
+function displayError(errorCode){
+  var errorMessage = document.getElementById("errorDiv");
+  var errorP = document.getElementById('errorP');
+    switch (errorCode) {
+      case 1:
+        errorP.innerHTML = "<strong>Whoops!</strong><br> Your repo has more than 4 languages! If we were to create a FroYo for this repo, it would be too tall and it would topple over."+
+        "<br> Is this a metaphor? ... Possibly... I'm just a chunk of javascript, what do I know?";
+        break;
+
+      default:
+        break;
+    }
     errorMessage.style.display = "block";
 }
 
 function hideError(){
-    var errorMessage = document.getElementById("error");
+    var errorMessage = document.getElementById("errorDiv");
     errorMessage.style.display = "none";
 }
 
@@ -205,5 +226,3 @@ function saveCanvasImage(){
     saveLink.href = canvas.toDataURL();
     saveLink.download = "froYoMyRepo.png";
 }
-
-

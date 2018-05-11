@@ -1,6 +1,8 @@
-# FroYoMyRepo:
+# FroYoMyRepo
 
-![FroYoMyRepo](https://github.com/ZacharyDavidSaunders/FroYoMyRepo/blob/master/imgs/logo.jpg)
+## [Click to visit site!](https://github.com/ZacharyDavidSaunders/FroYoMyRepo)
+
+[![FroYoMyRepo](https://github.com/ZacharyDavidSaunders/FroYoMyRepo/blob/master/imgs/logo.jpg)](https://github.com/ZacharyDavidSaunders/FroYoMyRepo)
 
 FroYoMyRepo is a web app that creates a custom ice-cream image based on the technologies used in a given repo. For example, an ice-cream image for this repo is listed below:
 
@@ -16,9 +18,13 @@ Feel free to add it to your README file in your repo, or use it an any other way
 * Image manipulation via the HTML canvas element.
 
 ## Contributing
-Issues on Github are intended to discuss functionality problems and requested application enhancements; please create issues accordingly. Pull requests are welcome and will be reviewed within a reasonable timeframe.
+Issues on Github are intended to discuss functionality, problems, and requested application enhancements; please create issues accordingly. Pull requests are welcome and will be reviewed within a reasonable timeframe.
 
 ## Release History
+* 1.0.2 - Fixed a few rendering bugs and added more scoop colors
+
+_(Sing it with me: I scream, you scream, we all scream for ... cream ... and pink ... and white.)_
+
 * 1.0.1 - Made repo public, updated README, and fixed a broken link in the About page.
 * 1.0.0 - Initial release
 
