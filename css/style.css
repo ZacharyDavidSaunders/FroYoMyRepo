@@ -88,7 +88,7 @@ hr {
   border-color: white;
 }
 
-#error{
+#errorDiv{
   margin-top: 15px;
   display: none;
 }
