@@ -215,7 +215,7 @@ function hideError(){
 }
 
 function displayCanvasButton(){
-    var canvasButtons = document.getElementById("canvasButton");
+    var canvasButtons = document.getElementById("canvasButtons");
     canvasButtons.style.display = "block";
 }
 
