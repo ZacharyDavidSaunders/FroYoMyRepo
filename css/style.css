@@ -64,6 +64,10 @@ hr {
   filter: brightness(100);
 }
 
+.inputMethod1, .inputMethod2{
+  margin-top: 10px;
+}
+
 /* Id css: */
 
 #aboutContainer{

@@ -19,6 +19,11 @@ Feel free to add it to your README file in your repo, or use it an any other way
 Issues on Github are intended to discuss functionality, solve problems, and request application enhancements; please create issues accordingly. Pull requests are welcome and will be reviewed within a reasonable timeframe.
 
 ## Release History
+* 1.0.4 - Refactored the code to:
+  * Add FroYo image preloading (this should prevent empty scoops that were due to unloaded images)
+  * Improve the error handling (now when you do something wrong, you'll know exactly _why_)
+  * Tweak the site's styling 🤵 (i.e. no more touching input boxes. Apparently they are just friends... I know, I asked)
+  * Use tabs more often (sometimes, in the heat of the moment, I've accidentally used the inferior spacebar. _Forgive me father, as I have sinned._)
 * 1.0.3 - Added a "Scoop Fresh FroYo" button that allows you change the scoop colors for your froyo. Added Twitter social button on About page. Other misc text changes.
 * 1.0.2 - Fixed a few rendering bugs and added more scoop colors
 
