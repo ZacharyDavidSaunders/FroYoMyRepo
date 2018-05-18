@@ -19,6 +19,14 @@ Feel free to add it to your README file in your repo, or use it an any other way
 Issues on Github are intended to discuss functionality, solve problems, and request application enhancements; please create issues accordingly. Pull requests are welcome and will be reviewed within a reasonable timeframe.
 
 ## Release History
+* 1.1 - Includes the following changes:
+  * Taller HTML canvas height to make froyos for repos with 4 languages no longer be cut off at the top.
+  * Smaller font sizes, wider HTML canvas width, and modified image positions to support repos and users with large names (some of you are ridiculous).
+  * Added a purple stroke to repo name (this makes it _pop_).
+  * Moved the logo to be closer to the froyo.
+  * Made the page headers and footers be dynamically generated (instead of being hardcoded). This will make future changes easier and less error prone.
+  * Added the version number to the footer.
+  * Changed the button colors to better match the color scheme.
 * 1.0.4 - Refactored the code to:
   * Add FroYo image preloading (this should prevent empty scoops that were due to unloaded images)
   * Improve the error handling (now when you do something wrong, you'll know exactly _why_)

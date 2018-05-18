@@ -6,19 +6,10 @@
     <link rel="icon" href="./imgs/favicon.ico" type="image/x-icon"/>
     <link href="./css/bootstrap/bootstrap.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
+    <script src="./js/dynamicPageScript.js"></script>
   </head>
 
-  <body>
-    <div class="container navbar navbar-inverse">
-        <a href='index.html' class="navbar-brand navbarItems">
-          <img src="./imgs/logo-white.png" alt="FroYoMyRepo" height="60" width="200" class="brand">
-        </a>
-        <ul class="nav nav-pills navbar-nav navbar-right navbarItems">
-          <li><a href="index.html">Home</a></li></li>
-          <li><a href=".">About</a></li>
-          <li><a href="https://github.com/ZacharyDavidSaunders/FroYoMyRepo" target="_blank">Source Code</a></li>
-        </ul>
-    </div>
+  <body onload="populateHeader(); populateFooter();">
     <div class= "container" id="aboutContainer">
         <div class="col-md-4">
           <h3 class="text-center">About</h3>
@@ -53,11 +44,6 @@
       <p class="answer">The art assets can be purchased <a href="https://creativemarket.com/PolpoDesign/1250445-Ice-Cream-clipart" target="_blank">here.</a> (Note: We have no affiliation with the artist, other than the fact that we are a licenced user of his artwork. We are simply giving credit where it is due.)</p>
       <p class="question">Is this project open source?</p>
       <p class="answer">Yes! Click the link in the upper navigation bar to view our code.</p>
-    </div>
-    <div class="col-md-12 row">
-        <hr>
-        <p class="text-center"> &copy; Zachary Saunders 2018, All Rights Reserved</p>
-      </div>
     </div>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
