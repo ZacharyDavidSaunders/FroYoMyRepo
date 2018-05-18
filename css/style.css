@@ -109,8 +109,18 @@ hr {
   display: none;
 }
 
-#saveButton{
+#saveFroYoImageButton{
+  margin-top: 0px;
   margin-left: 30px;
+}
+
+#scoopFreshFroYoButton{
+  background-color: #FF00FF;
+  color: white;
+}
+
+#scoopFreshFroYoButton:hover{
+  background-color: #b300b3;
 }
 
 #linkedInLink{

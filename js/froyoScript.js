@@ -160,10 +160,10 @@ function loadCanvas(canvas, context, langs, repoName, repoOwner){
 	var middleWidth = canvas.width / 2;   //This is a baseline for the middle of the canvas.
 	var scoops = [];
 	var randomNumber; //A random seed used to pick the scoop images.
-	context.font = "bold 25pt Verdana";
+	context.font = "bold 20pt Verdana";
 	context.textAlign= "center";
-	context.lineWidth = 1.8;
-	context.strokeStyle = 'white';
+	context.lineWidth = 1.2;
+	context.strokeStyle = "#FF00FF";
 	context.fillStyle = "black";
 
 	for(var i = 0; i < langs.length; i++){
@@ -172,25 +172,29 @@ function loadCanvas(canvas, context, langs, repoName, repoOwner){
 	}
 	console.log("Scoops length = "+scoops.length);
 
-	context.drawImage(cone, middleWidth-60, 350, cone.width/8, cone.height/8);
-	context.fillText(repoName, cone.width/6 + 5, cone.height/4);
-	context.strokeText(repoName, cone.width/6 + 5, cone.height/4);
-	context.font = "bold 15pt Verdana";
-	context.fillText("by "+repoOwner, cone.width/6 + 5, cone.height/4 + 25);
+	context.drawImage(cone, middleWidth-195, 385, cone.width/8, cone.height/8);
+	context.fillText(repoName, cone.width/6 + 195, cone.height/4 + 30);
+	context.strokeText(repoName, cone.width/6 + 195, cone.height/4 + 30);
+	context.font = "15pt Verdana";
+	context.fillText("by", cone.width/6 + 198, cone.height/4 + 55)
+	context.font = "bold 20pt Verdana";
+	context.strokeStyle = 'white';
+	context.fillText(repoOwner, cone.width/6 + 200, cone.height/4 + 82);
+	context.strokeText(repoOwner, cone.width/6 + 200, cone.height/4 + 82);
 
 	for(var i=0; i < scoops.length; i++){
 			var scoopOffset = cone.height/8;
 			var langLabelOffset = scoopOffset*1.5;
-			context.font = "bold 20pt Verdana";
+
 			for(var i=0; i < scoops.length; i++) {
-				context.drawImage(scoops[i], 100, scoopOffset, scoops[i].width/8, scoops[i].height/8);
-				context.fillText(langs[i], 180, langLabelOffset);
-				context.strokeText(langs[i], 180, langLabelOffset);
+				context.drawImage(scoops[i], 290, scoopOffset+30, scoops[i].width/8, scoops[i].height/8);
+				context.fillText(langs[i], 370, langLabelOffset+30);
+				context.strokeText(langs[i], 370, langLabelOffset+30);
 				scoopOffset-= 80;
 				langLabelOffset-=80;
 			}
 	}
-	context.drawImage(logo, middleWidth+115, 520, logo.width/4, logo.height/4);
+	context.drawImage(logo, middleWidth-100, 555, logo.width/4, logo.height/4);
 }
 
 function clearCanvas(canvas){
